@@ -1,8 +1,8 @@
 class InitialClasses < ActiveRecord::Migration[5.0]
   def change
     create_table :characters do |t|
-      t.integer :health
       t.string :name
+      t.integer :health
       t.integer :running_speed
       t.integer :crouching_speed
       t.string :origin
@@ -15,6 +15,7 @@ class InitialClasses < ActiveRecord::Migration[5.0]
     end
 
     create_table :abilities do |t|
+      t.string :name
       t.float :cooldown
       t.float :damage_done
       t.integer :maximum_range
@@ -27,10 +28,11 @@ class InitialClasses < ActiveRecord::Migration[5.0]
     end
 
     create_table :weapons do |t|
+      t.string :name
+      t.integer :capacity
       t.float :damage_per_second
       t.float :shots_per_second
       t.float :damage_per_shot
-      t.integer :capacity
       t.float :headshot_multiplier
       t.boolean :is_projectile
       t.boolean :is_hitscan
@@ -40,6 +42,7 @@ class InitialClasses < ActiveRecord::Migration[5.0]
     end
 
     create_table :ultimates do |t|
+      t.string :name
       t.integer :time
       t.integer :total_damage_done
       t.float :damage_per_second
@@ -63,12 +66,12 @@ class InitialClasses < ActiveRecord::Migration[5.0]
 
     create_table :character_excells_at_map, id: false do |t|
       t.references :character
-      t.reference :map
+      t.references :map
     end
     add_index :character_excells_at_map, [:character_id, :map_id]
 
     create_table :map_game_types, id: false do |t|
-      t.refernces :map
+      t.references :map
       t.references :game_type
     end
     add_index :map_game_types, [:map_id, :game_type_id]
