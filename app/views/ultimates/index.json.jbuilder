@@ -1,0 +1,1 @@
+json.array! @ultimates, partial: 'ultimates/ultimate', as: :ultimate

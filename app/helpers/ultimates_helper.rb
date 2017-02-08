@@ -1,0 +1,2 @@
+module UltimatesHelper
+end

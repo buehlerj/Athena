@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ultimates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ultimates.each do |ultimate| %>
+      <tr>
+        <td><%= link_to 'Show', ultimate %></td>
+        <td><%= link_to 'Edit', edit_ultimate_path(ultimate) %></td>
+        <td><%= link_to 'Destroy', ultimate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ultimate', new_ultimate_path %>

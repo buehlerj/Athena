@@ -1,0 +1,1 @@
+json.partial! "ultimates/ultimate", ultimate: @ultimate
