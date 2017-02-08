@@ -1,0 +1,2 @@
+class Ultimate < ApplicationRecord
+end
