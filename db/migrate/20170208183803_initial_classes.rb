@@ -3,14 +3,14 @@ class InitialClasses < ActiveRecord::Migration[5.0]
     create_table :characters do |t|
       t.integer :health
       t.string :name
-      t.running_speed :integer
-      t.crouching_speed :integer
-      t.origin :string
+      t.integer :running_speed
+      t.integer :crouching_speed
+      t.string :origin
 
-      t.belongs_to :class
+      t.belongs_to :division
     end
 
-    create_table :classes do |t|
+    create_table :divisions do |t|
       t.string :name
     end
 
