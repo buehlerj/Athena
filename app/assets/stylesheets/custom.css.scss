@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$light-grey: #EBEBEB;
+$overwatch-orange: #FA9C1E;
+
+html {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(#212429, #212226, #1d1e22);
+  color: $light-grey;
+}
+
+a {
+  color: $overwatch-orange;
+}
+
+a:hover {
+  color: #CF7804;
+  text-decoration: none;
+}
