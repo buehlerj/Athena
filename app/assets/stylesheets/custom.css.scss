@@ -70,10 +70,6 @@ input[type=text] {
   margin: -13px -12px auto -1px;
 }
 
-.navbar-menu-item {
-  font-size: 1.5em;
-}
-
 .navbar-menu-item:hover, .dropdown-toggle:hover {
   background-color: $middle-grey !important;
   margin-top: 2px;
@@ -81,13 +77,18 @@ input[type=text] {
   color: $overwatch-orange !important;
 }
 
-.navbar-menu-item:visited, .dropdown-toggle:visited, .navbar-menu-item:active, .dropdown-toggle:active {
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: $middle-grey !important;
+}
+
+.navbar-menu-item:link, .dropdown-toggle:link {
+  font-size: 1.5em;
   color: $overwatch-orange;
 }
 
-.dropdown-toggle {
-  font-size: 1.5em;
+.navbar-menu-item:visited, .dropdown-toggle:visited, .navbar-menu-item:active, .dropdown-toggle:active {
+  background-color: $middle-grey !important;
+  color: $overwatch-orange;
 }
 
 .dropdown-menu {
