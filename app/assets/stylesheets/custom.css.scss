@@ -29,3 +29,57 @@ a:hover {
   color: #CF7804;
   text-decoration: none;
 }
+
+/* --- UNIVERSAL STYLES --- */
+.ow-button {
+  color: white;
+  font-size: 2.0em;
+  border: 2px solid #26c6ff;
+  background: rgba(0,0,255,0.3);
+  border-radius: 8px;
+  transform: skewX(165deg);
+  margin: 30px;
+}
+
+.ow-text {
+  color: black;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type=submit] {
+  @extend .ow-button;
+}
+
+input[type=text] {
+  color: black;
+}
+
+/* --- NAVBAR STYLES --- */
+.navbar-brand {
+  font-size: 2em;
+  margin-top: 11px; 
+}
+
+#navbar-logo {
+  height: 50px;
+  width: 50px;
+  opacity: 0.8;
+  margin: -13px -12px auto -1px;
+}
+
+
+/* --- MAIN STYLES --- */
+#main-page-logo {
+  height: 594px;
+  margin: 50px 50px 15px 60px;
+  border-radius: 50px;
+  float: left;
+}
+
+.main-page-description {
+  margin-top: 50px;
+  margin-right: 20px;
+}
