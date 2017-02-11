@@ -7,13 +7,44 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body class="center">
     <nav class="navbar navbar-light bg-faded">
-      <%= link_to image_tag("AthenaLogoTransparent", id: "navbar-logo"), root_path, class: "navbar-brand navbar-brand-logo" %>
-      <a class="navbar-brand" id="navbar-text" href="/">Athena</a>
+      <div class="navbar-header">
+        <%= link_to image_tag("AthenaLogoTransparent", id: "navbar-logo"), root_path, class: "navbar-brand navbar-brand-logo" %>
+        <a class="navbar-brand" id="navbar-text" href="/">Athena</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-height" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right navbar-height">
+          <li><a class="navbar-menu-item" href="/">Home</a></li>
+          <li><a class="navbar-menu-item" href="/characters">Characters</a></li>
+          <li><a class="navbar-menu-item" href="/divisions">Classes</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extra<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a class="navbar-menu-item" href="/maps">Maps</a></li>
+              <li><a class="navbar-menu-item" href="/game_types">Game Types</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a class="navbar-menu-item" href="/ultimates">Ultimates</a></li>
+              <li><a class="navbar-menu-item" href="/weapons">Weapons</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
     </nav>
     <%= yield %>
+
+    <div class="footer navbar-bottom" id="footer-bar">
+      <span class="default-cursor">
+        Copyright <%= Time.now.year %>
+        <span class="footer-divider">|</span>
+        <span class="pointer" data-toggle="modal" data-target="#about-page-modal">About</span>
+        <span class="footer-divider">|</span>
+        <span class="pointer" data-toggle="modal" data-target="#help-page-modal">Help</span>
+    </div>
   </body>
 </html>
