@@ -1,5 +1,5 @@
 class Hero < ApplicationRecord
-  self.table_name = 'Hero'
+  self.table_name = 'heroes'
 
   has_and_belongs_to_many :map
   belongs_to :division
