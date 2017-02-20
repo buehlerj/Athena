@@ -1,4 +1,6 @@
 class Hero < ApplicationRecord
+  self.table_name = 'Hero'
+
   has_and_belongs_to_many :map
   belongs_to :division
   has_many :abilities
