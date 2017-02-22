@@ -1,4 +1,4 @@
-<%= form_for(hero) do |f| %>
+<%= form_for(hero, url: heroes_path) do |f| %>
   <% if hero.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hero.errors.count, "error") %> prohibited this hero from being saved:</h2>
