@@ -1,3 +1,3 @@
 class Ultimate < ApplicationRecord
-  belongs_to :character
+  belongs_to :hero
 end

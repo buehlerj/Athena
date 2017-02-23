@@ -21,26 +21,8 @@ ActiveRecord::Schema.define(version: 20170208183803) do
     t.boolean "is_hitscan"
     t.float   "projectile_speed"
     t.string  "information"
-    t.integer "character_id"
-    t.index ["character_id"], name: "index_abilities_on_character_id"
-  end
-
-  create_table "character_excells_at_map", id: false, force: :cascade do |t|
-    t.integer "character_id"
-    t.integer "map_id"
-    t.index ["character_id", "map_id"], name: "index_character_excells_at_map_on_character_id_and_map_id"
-    t.index ["character_id"], name: "index_character_excells_at_map_on_character_id"
-    t.index ["map_id"], name: "index_character_excells_at_map_on_map_id"
-  end
-
-  create_table "characters", force: :cascade do |t|
-    t.string  "name"
-    t.integer "health"
-    t.integer "running_speed"
-    t.integer "crouching_speed"
-    t.string  "origin"
-    t.integer "division_id"
-    t.index ["division_id"], name: "index_characters_on_division_id"
+    t.integer "hero_id"
+    t.index ["hero_id"], name: "index_abilities_on_hero_id"
   end
 
   create_table "divisions", force: :cascade do |t|
@@ -52,6 +34,24 @@ ActiveRecord::Schema.define(version: 20170208183803) do
     t.string "description"
     t.string "objective_team_1"
     t.string "objective_team_2"
+  end
+
+  create_table "hero_excells_at_map", id: false, force: :cascade do |t|
+    t.integer "hero_id"
+    t.integer "map_id"
+    t.index ["hero_id", "map_id"], name: "index_hero_excells_at_map_on_hero_id_and_map_id"
+    t.index ["hero_id"], name: "index_hero_excells_at_map_on_hero_id"
+    t.index ["map_id"], name: "index_hero_excells_at_map_on_map_id"
+  end
+
+  create_table "heroes", force: :cascade do |t|
+    t.string  "name"
+    t.integer "health"
+    t.integer "running_speed"
+    t.integer "crouching_speed"
+    t.string  "origin"
+    t.integer "division_id"
+    t.index ["division_id"], name: "index_heroes_on_division_id"
   end
 
   create_table "map_game_types", id: false, force: :cascade do |t|
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 20170208183803) do
     t.float   "damage_per_second"
     t.float   "headshot_multiplier"
     t.integer "average_charge_rate"
-    t.integer "character_id"
-    t.index ["character_id"], name: "index_ultimates_on_character_id"
+    t.integer "hero_id"
+    t.index ["hero_id"], name: "index_ultimates_on_hero_id"
   end
 
   create_table "weapons", force: :cascade do |t|
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20170208183803) do
     t.boolean "is_projectile"
     t.boolean "is_hitscan"
     t.float   "projectile_speed"
-    t.integer "character_id"
-    t.index ["character_id"], name: "index_weapons_on_character_id"
+    t.integer "hero_id"
+    t.index ["hero_id"], name: "index_weapons_on_hero_id"
   end
 
 end

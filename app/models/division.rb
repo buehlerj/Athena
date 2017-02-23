@@ -1,3 +1,3 @@
 class Division < ApplicationRecord
-  has_many :characters
+  has_many :heroes
 end

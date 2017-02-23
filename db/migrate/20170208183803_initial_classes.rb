@@ -1,6 +1,6 @@
 class InitialClasses < ActiveRecord::Migration[5.0]
   def change
-    create_table :characters do |t|
+    create_table :heroes do |t|
       t.string :name
       t.integer :health
       t.integer :running_speed
@@ -24,7 +24,7 @@ class InitialClasses < ActiveRecord::Migration[5.0]
       t.float :projectile_speed
       t.string :information
 
-      t.belongs_to :character
+      t.belongs_to :hero
     end
 
     create_table :weapons do |t|
@@ -38,7 +38,7 @@ class InitialClasses < ActiveRecord::Migration[5.0]
       t.boolean :is_hitscan
       t.float :projectile_speed
 
-      t.belongs_to :character
+      t.belongs_to :hero
     end
 
     create_table :ultimates do |t|
@@ -49,7 +49,7 @@ class InitialClasses < ActiveRecord::Migration[5.0]
       t.float :headshot_multiplier
       t.integer :average_charge_rate
 
-      t.belongs_to :character
+      t.belongs_to :hero
     end
 
     create_table :maps do |t|
@@ -64,11 +64,11 @@ class InitialClasses < ActiveRecord::Migration[5.0]
       t.string :objective_team_2
     end
 
-    create_table :character_excells_at_map, id: false do |t|
-      t.references :character
+    create_table :hero_excells_at_map, id: false do |t|
+      t.references :hero
       t.references :map
     end
-    add_index :character_excells_at_map, [:character_id, :map_id]
+    add_index :hero_excells_at_map, [:hero_id, :map_id]
 
     create_table :map_game_types, id: false do |t|
       t.references :map
